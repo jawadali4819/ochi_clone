@@ -1,5 +1,4 @@
 import React from 'react'
-import { FaArrowLeft } from "react-icons/fa";
 
 const About = () => {
   return (
@@ -21,7 +20,6 @@ const About = () => {
             Read more
 
             <div className=" bg-white text-black w-max p-3 rounded-[50%] flex items-center justify-center rotate-[135deg] cursor-pointer" >
-              <FaArrowLeft />
             </div>
 
           </button>
