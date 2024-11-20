@@ -24,7 +24,7 @@ const LandingPage = () => {
                       initial={{ width: 0 }}
                       animate={{ width: "8vw" }}
                       transition={{ ease: [0.25, 1, 0.5, 1], duration: 1 }}
-                      className=' h-[11vh] w-[10vw] mr-2 bg-red-600 relative  rounded-sm'></motion.div>)
+                      className='h-[3rem] md:h-[4rem] w-[10vw] mr-2 bg-red-600 relative  rounded-sm'></motion.div>)
                   }
                   <h1 className="uppercase text-[7.5vw] leading-[6.5vw] tracking-[-0.3vw] font-semibold RobotoCondensed">
                     {text}

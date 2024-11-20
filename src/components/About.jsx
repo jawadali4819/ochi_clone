@@ -1,4 +1,5 @@
 import React from 'react'
+import { FaArrowLeft } from "react-icons/fa";
 import { FaArrowLeftLong } from "react-icons/fa6";
 
 const About = () => {
@@ -12,7 +13,7 @@ const About = () => {
         Ochi is a strategic partner for fast-growing tech businesses that need to <u>raise funds</u>, <u>sell products</u>,  <u>explain complex ideas</u>, and <u>hire great people</u>.
       </h1>
 
-      <div className='w-full flex border-t-[1px] border-t-[#738531] mt-16 p-0'>
+      <div className='w-full flex flex-col md:flex md:flex-row border-t-[1px] border-t-[#738531] mt-16 p-0'>
         <div className='px-10 w-1/2 flex flex-col justify-start gap-5'>
           <h1 className="text-[4vw] tracking-tight ">
             Our approach:
@@ -21,14 +22,14 @@ const About = () => {
             Read more
 
             <div className=" bg-white text-black w-max p-3 rounded-[50%] flex items-center justify-center rotate-[135deg] cursor-pointer" >
-              <FaArrowLeftLong />
+              <FaArrowLeft />
             </div>
 
           </button>
 
         </div>
 
-        <div className='w-1/2 h-[70vh] my-5 mx-5 bg-[#9aca2a] rounded-[1rem] align-self-center'>
+        <div className='md:w-1/2 md:h-[70vh] w-2/3 h-fit my-5 mx-5 bg-[#9aca2a] rounded-[1rem] align-self-center'>
           <img src="/images/about_image.jpg" alt=""
             className="w-full h-full object-cover rounded-[1rem]"
           />
