@@ -1,6 +1,5 @@
 import React from 'react'
 import { FaArrowLeft } from "react-icons/fa";
-import { FaArrowLeftLong } from "react-icons/fa6";
 
 const About = () => {
   return (
