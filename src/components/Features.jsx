@@ -5,68 +5,129 @@ const Features = () => {
   const [vise, setVise] = useState(false);
   const [fyde, setFyde] = useState(false);
 
+  // Animation variants
   const headingVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0, zIndex: 10 },
+    hidden: { opacity: 0, y: 30, rotate: 5 },
+    visible: { 
+      opacity: 1, 
+      y: 0, 
+      rotate: 0,
+      transition: { 
+        duration: 0.6, 
+        ease: 'easeOut' 
+      }
+    },
   };
 
-  const scaleVarients = {
-    hidden: { scale: 1 },
-    visible: { scale: 0.9 },
-  }
+  const scaleVariants = {
+    hidden: { scale: 1, filter: 'brightness(1)' },
+    visible: { 
+      scale: 0.95, 
+      filter: 'brightness(0.85)',
+      transition: { 
+        duration: 0.5, 
+        ease: 'easeOut' 
+      }
+    },
+  };
+
+  const overlayVariants = {
+    hidden: { opacity: 0 },
+    visible: { 
+      opacity: 0.3, 
+      transition: { 
+        duration: 0.4, 
+        ease: 'easeInOut' 
+      }
+    },
+  };
 
   return (
-    <div className='w-full py-20'>
-      <div className='w-full px-10 pb-10 flex border-b-[1px] border-b-zinc-600'>
-        <h1 className='font-["Neue_Montreal"] text-[7vh] tracking-wide'>Featured projects</h1>
+    <div className="w-full py-10 md:py-20 bg-gradient-to-b from-zinc-800 to-zinc-800">
+      {/* Heading Section */}
+      <div className="w-full px-6 md:px-10 pb-8 md:pb-10 border-b border-zinc-300">
+        <h1 className="font-['Neue_Montreal'] text-4xl sm:text-5xl md:text-[7vh] tracking-wide text-zinc-100">
+          Featured Projects
+        </h1>
       </div>
 
-      <div className='cards mt-10 px-10 w-full flex items-center gap-10'>
+      {/* Cards Section */}
+      <div className="cards mt-8 md:mt-12 px-6 md:px-10 w-full flex flex-col md:flex-row gap-6 md:gap-10">
+        {/* Card 1 - FYDE */}
         <div
-          className='card-1 cards-container relative w-1/2 h-[75vh]'
+          className="card-1 cards-container relative w-full md:w-1/2 h-[50vh] sm:h-[60vh] md:h-[75vh]"
           onMouseEnter={() => setFyde(true)}
           onMouseLeave={() => setFyde(false)}
         >
-          <motion.h1
-            className='absolute left-[80%] transform -translate-x-1/2 top-[50%] text-[7vw] text-[#55635F] RobotoCondensed font-bold tracking-tighter leading-[0px]'
+          {/* Overlay for hover effect */}
+          <motion.div
+            className="absolute inset-0 bg-black z-10 rounded-xl"
             initial="hidden"
-            animate={fyde ? "visible" : "hidden"}
+            animate={fyde ? 'visible' : 'hidden'}
+            variants={overlayVariants}
+          />
+
+          {/* Animated Heading */}
+          <motion.h1
+            className="absolute left-1/2 md:left-[80%] -translate-x-1/2 top-1/2 -translate-y-1/2 text-5xl sm:text-6xl md:text-[7vw] text-[#80a588] font-['Roboto_Condensed'] font-bold tracking-tighter z-20 pointer-events-none"
+            initial="hidden"
+            animate={fyde ? 'visible' : 'hidden'}
             variants={headingVariants}
-            transition={{ duration: 0.5, ease: 'easeOut' }}
           >
             FYDE
           </motion.h1>
-          <motion.div className='w-full h-full rounded-xl overflow-hidden'
+
+          {/* Animated Image */}
+          <motion.div
+            className="w-full h-full rounded-xl overflow-hidden shadow-lg bg-white"
             initial="hidden"
-            animate={fyde ? "visible" : "hidden"}
-            variants={scaleVarients}
-            transition={{ duration: 0.5, ease: 'easeOut' }}
+            animate={fyde ? 'visible' : 'hidden'}
+            variants={scaleVariants}
           >
-            <img src="https://ochi.design/wp-content/uploads/2023/10/Fyde_Illustration_Crypto_2-1326x1101.png" alt="image" />
+            <img
+              src="https://ochi.design/wp-content/uploads/2023/10/Fyde_Illustration_Crypto_2-1326x1101.png"
+              alt="Fyde project"
+              className="w-full h-full object-cover"
+            />
           </motion.div>
         </div>
 
+        {/* Card 2 - VISE */}
         <div
-          className='card-2 cards-container relative w-1/2 h-[75vh]'
+          className="card-2 cards-container relative w-full md:w-1/2 h-[50vh] sm:h-[60vh] md:h-[75vh]"
           onMouseEnter={() => setVise(true)}
           onMouseLeave={() => setVise(false)}
         >
-          <motion.h1
-            className='absolute right-[90%] transform -translate-x-1/2 top-[50%] text-[7vw] text-[#55635F] RobotoCondensed font-bold tracking-tighter leading-[0px]'
+          {/* Overlay for hover effect */}
+          <motion.div
+            className="absolute inset-0 bg-black z-10 rounded-xl"
             initial="hidden"
-            animate={vise ? "visible" : "hidden"}
+            animate={vise ? 'visible' : 'hidden'}
+            variants={overlayVariants}
+          />
+
+          {/* Animated Heading */}
+          <motion.h1
+            className="absolute right-1/2 md:right-[90%] translate-x-1/2 top-1/2 -translate-y-1/2 text-5xl sm:text-6xl md:text-[7vw] text-[#80a588] font-['Roboto_Condensed'] font-bold tracking-tighter z-20 pointer-events-none"
+            initial="hidden"
+            animate={vise ? 'visible' : 'hidden'}
             variants={headingVariants}
-            transition={{ duration: 0.5, ease: 'easeOut' }}
           >
             VISE
           </motion.h1>
-          <motion.div className='w-full h-full rounded-xl overflow-hidden'
+
+          {/* Animated Image */}
+          <motion.div
+            className="w-full h-full rounded-xl overflow-hidden shadow-lg bg-white"
             initial="hidden"
-            animate={vise ? "visible" : "hidden"}
-            variants={scaleVarients}
-            transition={{ duration: 0.5, ease: 'easeOut' }}
+            animate={vise ? 'visible' : 'hidden'}
+            variants={scaleVariants}
           >
-            <img src="https://ochi.design/wp-content/uploads/2022/09/Vise_front2-1326x1101.jpg" alt="image" />
+            <img
+              src="https://ochi.design/wp-content/uploads/2022/09/Vise_front2-1326x1101.jpg"
+              alt="Vise project"
+              className="w-full h-full object-cover"
+            />
           </motion.div>
         </div>
       </div>

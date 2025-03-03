@@ -12,8 +12,8 @@ const LandingPage = () => {
       data-scroll
       data-scroll-section
       data-scroll-speed="-0.4"
-      className='w-full h-screen pt-1 bg-zinc-900'>
-      <div className="textStructure mt-40 px-10">
+      className='w-full pt-1 bg-zinc-900'>
+      <div className="textStructure mt-40 px-10 md:pb-16">
         {
           ['we create', 'eye-opening', 'presentations'].map((text, index) => {
             return (
@@ -24,9 +24,10 @@ const LandingPage = () => {
                       initial={{ width: 0 }}
                       animate={{ width: "8vw" }}
                       transition={{ ease: [0.25, 1, 0.5, 1], duration: 1 }}
-                      className='h-[3rem] md:h-[4rem] w-[10vw] mr-2 bg-red-600 relative  rounded-sm'></motion.div>)
+                      className='h-[2rem] my-2 md:my-0 md:h-[4rem] w-[10vw] mr-2 bg-red-600 relative  rounded-sm'></motion.div>)
                   }
-                  <h1 className="uppercase text-[7.5vw] leading-[6.5vw] tracking-[-0.3vw] font-semibold RobotoCondensed">
+                  <h1 className="uppercase md:text-[7.5vw] md:leading-[6.5vw] md:tracking-[-0.3vw] 
+                  text-[12vw] leading-[10vw] sm:text-[9vw] sm:leading-[8vw] font-semibold RobotoCondensed">
                     {text}
                   </h1>
 
@@ -49,7 +50,7 @@ const LandingPage = () => {
           onMouseLeave={() => setIsHovered(false)}
 
           className=" flex items-center justify-center gap-5 font-['Neue_Montreal'] font-medium">
-          <button className="start overflow-hidden  px-5 py-[0.5rem] border-[1px] border-zinc-700 rounded-full uppercase text-[1vw] cursor-pointer "
+          <button className="start overflow-hidden  px-5 py-[0.5rem] border-[1px] border-zinc-700 rounded-full uppercase md:text-[1vw] text-[2vw] cursor-pointer "
             style={{ color: isHovered ? '#000' : '#fff' }}
           >
             Start the project
